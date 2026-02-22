@@ -131,6 +131,16 @@ font-weight:600;
 cursor:pointer;
 }
 
+/* MAP */
+.map-container{
+margin-top:40px;
+width:100%;
+max-width:1000px;
+border-radius:15px;
+overflow:hidden;
+border:1px solid rgba(212,175,55,0.3);
+}
+
 /* MODAL */
 #menuModal{
 display:none;
@@ -166,10 +176,7 @@ cursor:pointer;
 font-weight:600;
 }
 
-/* =========================
-   MOBILE HEADER IMPROVEMENT
-   ========================= */
-
+/* MOBILE */
 @media (max-width:768px){
 
 .header{
@@ -242,7 +249,8 @@ display:flex !important;
 <h1>Era Bistro | Global Kitchen</h1>
 <p>
 4.5 Rating · 447 Reviews · Italian Restaurant<br><br>
-332F, Rd Number 82, beside California Burrito, Ambedkar Nagar, Film Nagar, Hyderabad, Telangana 500096
+332F, Rd Number 82, beside California Burrito, Ambedkar Nagar, Film Nagar, Hyderabad, Telangana 500096<br><br>
+Open · Closes 11:30 pm · Dine-in · Takeaway · Delivery · LGBTQ+ Friendly
 </p>
 </section>
 
@@ -283,8 +291,20 @@ Charming vibe. Flavorful food.
 <section id="about">
 <h1>About Era Bistro</h1>
 <p>
-Vintage themed global kitchen in Film Nagar. Offers rooftop seating, fireplace ambiance, dine-in, delivery, valet parking, reservations, free Wi-Fi, family friendly and LGBTQ+ friendly.
+Vintage themed global kitchen in Film Nagar offering Italian and international cuisine. Popular for lunch, dinner, solo dining and group gatherings. Features rooftop seating, fireplace ambiance, dine-in, delivery, valet parking, reservations, free Wi-Fi, family friendly and LGBTQ+ friendly environment.
 </p>
+
+<div class="map-container">
+<iframe 
+src="https://www.google.com/maps?q=332F%20Rd%20Number%2082%20Film%20Nagar%20Hyderabad&output=embed" 
+width="100%" 
+height="400" 
+style="border:0;" 
+allowfullscreen="" 
+loading="lazy">
+</iframe>
+</div>
+
 </section>
 
 <div id="menuModal">
