@@ -37,6 +37,17 @@ border-bottom:1px solid rgba(212,175,55,0.2);
 z-index:1000;
 }
 
+.logo{
+color:#d4af37;
+font-weight:600;
+font-size:22px;
+}
+
+.nav-links{
+display:flex;
+align-items:center;
+}
+
 .nav-links a{
 color:#d4af37;
 text-decoration:none;
@@ -51,6 +62,14 @@ color:#121212;
 border-radius:30px;
 text-decoration:none;
 font-weight:600;
+}
+
+/* HAMBURGER */
+.hamburger{
+display:none;
+font-size:26px;
+color:#d4af37;
+cursor:pointer;
 }
 
 /* SECTIONS */
@@ -92,22 +111,12 @@ border:1px solid rgba(212,175,55,0.2);
 padding:25px;
 border-radius:15px;
 text-align:left;
-transition:0.3s ease;
-}
-
-.review-box:hover{
-transform:translateY(-6px);
 }
 
 .review-name{
 color:#d4af37;
 font-weight:600;
 margin-bottom:10px;
-}
-
-.review-text{
-font-size:14px;
-opacity:0.9;
 }
 
 /* MENU BUTTON */
@@ -157,32 +166,41 @@ cursor:pointer;
 font-weight:600;
 }
 
-/* MOBILE */
+/* =========================
+   MOBILE HEADER IMPROVEMENT
+   ========================= */
+
 @media (max-width:768px){
 
 .header{
 padding:15px 20px;
-flex-direction:column;
-align-items:flex-start;
 }
 
 .nav-links{
-margin-top:10px;
-display:flex;
-flex-wrap:wrap;
-gap:15px;
+display:none;
+position:absolute;
+top:70px;
+left:0;
+width:100%;
+background:#111;
+flex-direction:column;
+padding:20px;
+border-top:1px solid rgba(212,175,55,0.2);
 }
 
 .nav-links a{
-margin-left:0;
-font-size:14px;
+margin:15px 0;
 }
 
 .contact-btn{
-margin-left:0;
-margin-top:10px;
-padding:8px 16px;
-font-size:14px;
+display:block;
+margin:20px 0 0 0;
+width:100%;
+text-align:center;
+}
+
+.hamburger{
+display:block;
 }
 
 section{
@@ -193,10 +211,11 @@ h1{
 font-size:28px;
 }
 
-.review-box{
-padding:18px;
 }
 
+/* Show mobile menu */
+.nav-active{
+display:flex !important;
 }
 
 </style>
@@ -205,34 +224,30 @@ padding:18px;
 <body>
 
 <div class="header">
-<div style="color:#d4af37;font-weight:600;">Era Bistro</div>
+<div class="logo">Era Bistro</div>
 
-<div style="display:flex;align-items:center;flex-wrap:wrap;">
-<div class="nav-links">
+<div class="hamburger" onclick="toggleMenu()">☰</div>
+
+<div class="nav-links" id="navMenu">
 <a href="#overview">Overview</a>
 <a href="#menu">Menu</a>
 <a href="#reviews">Reviews</a>
 <a href="#about">About</a>
-</div>
-
 <a href="tel:+919553311158" class="contact-btn">Call +91 9553311158</a>
 </div>
+
 </div>
 
 <section id="overview">
 <h1>Era Bistro | Global Kitchen</h1>
 <p>
 4.5 Rating · 447 Reviews · Italian Restaurant<br><br>
-Address:<br>
-332F, Rd Number 82, beside California Burrito, Ambedkar Nagar, Film Nagar, Hyderabad, Telangana 500096<br><br>
-Open · Closes 11:30 pm<br>
-Dine-in · Takeaway · Delivery · LGBTQ+ Friendly
+332F, Rd Number 82, beside California Burrito, Ambedkar Nagar, Film Nagar, Hyderabad, Telangana 500096
 </p>
 </section>
 
 <section id="menu">
 <h1>Menu</h1>
-<p>Explore our curated menu collection featuring global cuisine and signature dishes.</p>
 <button class="menu-btn" onclick="openMenu()">View Full Menu</button>
 </section>
 
@@ -243,30 +258,22 @@ Dine-in · Takeaway · Delivery · LGBTQ+ Friendly
 
 <div class="review-box">
 <div class="review-name">Nathan Anand</div>
-<div class="review-text">
-Experienced power issues during visit. Generators didn’t start which caused discomfort.
-</div>
+Power issues during visit caused discomfort.
 </div>
 
 <div class="review-box">
 <div class="review-name">Drishika Reddy</div>
-<div class="review-text">
-Food was average. Portions felt small for price. Service was slow.
-</div>
+Food average. Portions small. Service slow.
 </div>
 
 <div class="review-box">
 <div class="review-name">Lekha Singhal</div>
-<div class="review-text">
-One of the best places in Film Nagar for global cuisine. Aesthetic interiors perfect for photos.
-</div>
+Beautiful ambiance. Great global cuisine.
 </div>
 
 <div class="review-box">
 <div class="review-name">Nahida Parveen</div>
-<div class="review-text">
-Charming ambiance, flavorful food, and friendly service.
-</div>
+Charming vibe. Flavorful food.
 </div>
 
 </div>
@@ -276,24 +283,16 @@ Charming ambiance, flavorful food, and friendly service.
 <section id="about">
 <h1>About Era Bistro</h1>
 <p>
-Era Bistro is a vintage-themed global kitchen located in Film Nagar, Hyderabad.
-The restaurant offers Italian and international cuisine in a cozy, trendy atmosphere.
-It is popular for lunch, dinner, solo dining, and group gatherings.
-Highlights include rooftop seating, fireplace ambiance, great desserts, and aesthetic interiors.
-The restaurant supports dine-in, takeaway, delivery, and reservations.
-Amenities include free Wi-Fi, gender-neutral restrooms, valet parking, and ample parking space.
-Family-friendly, LGBTQ+ friendly, and ideal for both casual and special occasions.
+Vintage themed global kitchen in Film Nagar. Offers rooftop seating, fireplace ambiance, dine-in, delivery, valet parking, reservations, free Wi-Fi, family friendly and LGBTQ+ friendly.
 </p>
 </section>
 
 <div id="menuModal">
 <button class="close-btn" onclick="closeMenu()">Close</button>
-
-<img src="menu1.png" alt="Menu Page 1">
-<img src="menu2.png" alt="Menu Page 2">
-<img src="menu3.png" alt="Menu Page 3">
-<img src="menu4.png" alt="Menu Page 4">
-
+<img src="menu1.png">
+<img src="menu2.png">
+<img src="menu3.png">
+<img src="menu4.png">
 </div>
 
 <script>
@@ -305,6 +304,10 @@ document.body.style.overflow="hidden";
 function closeMenu(){
 document.getElementById("menuModal").style.display="none";
 document.body.style.overflow="auto";
+}
+
+function toggleMenu(){
+document.getElementById("navMenu").classList.toggle("nav-active");
 }
 </script>
 
