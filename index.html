@@ -15,9 +15,7 @@ box-sizing:border-box;
 font-family:'Inter',sans-serif;
 }
 
-html{
-scroll-behavior:smooth;
-}
+html{scroll-behavior:smooth;}
 
 body{
 background:#121212;
@@ -73,8 +71,43 @@ margin-bottom:20px;
 }
 
 p{
-max-width:800px;
-opacity:0.8;
+max-width:900px;
+opacity:0.85;
+line-height:1.7;
+}
+
+/* REVIEW BOXES */
+.review-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:30px;
+margin-top:50px;
+width:100%;
+max-width:1100px;
+}
+
+.review-box{
+background:rgba(212,175,55,0.06);
+border:1px solid rgba(212,175,55,0.2);
+padding:25px;
+border-radius:15px;
+text-align:left;
+transition:0.3s ease;
+}
+
+.review-box:hover{
+transform:translateY(-6px);
+}
+
+.review-name{
+color:#d4af37;
+font-weight:600;
+margin-bottom:10px;
+}
+
+.review-text{
+font-size:14px;
+opacity:0.9;
 }
 
 /* MENU BUTTON */
@@ -87,12 +120,6 @@ border:none;
 border-radius:40px;
 font-weight:600;
 cursor:pointer;
-transition:0.3s ease;
-}
-
-.menu-btn:hover{
-transform:translateY(-4px);
-box-shadow:0 10px 25px rgba(212,175,55,0.4);
 }
 
 /* MODAL */
@@ -128,14 +155,10 @@ padding:10px 18px;
 border-radius:25px;
 cursor:pointer;
 font-weight:600;
-z-index:10000;
 }
 
-/* =========================
-   MOBILE OPTIMIZATION
-   ========================= */
-
-@media (max-width: 768px){
+/* MOBILE */
+@media (max-width:768px){
 
 .header{
 padding:15px 20px;
@@ -170,32 +193,8 @@ h1{
 font-size:28px;
 }
 
-p{
-font-size:14px;
-line-height:1.6;
-}
-
-.menu-btn{
-width:100%;
-max-width:280px;
-padding:12px 20px;
-font-size:14px;
-}
-
-#menuModal{
-padding:80px 15px 40px 15px;
-}
-
-#menuModal img{
-margin-bottom:25px;
-border-radius:8px;
-}
-
-.close-btn{
-top:15px;
-right:15px;
-padding:8px 14px;
-font-size:14px;
+.review-box{
+padding:18px;
 }
 
 }
@@ -222,23 +221,69 @@ font-size:14px;
 
 <section id="overview">
 <h1>Era Bistro | Global Kitchen</h1>
-<p>Vintage global dining experience in Film Nagar, Hyderabad.</p>
+<p>
+4.5 Rating · 447 Reviews · Italian Restaurant<br><br>
+Address:<br>
+332F, Rd Number 82, beside California Burrito, Ambedkar Nagar, Film Nagar, Hyderabad, Telangana 500096<br><br>
+Open · Closes 11:30 pm<br>
+Dine-in · Takeaway · Delivery · LGBTQ+ Friendly
+</p>
 </section>
 
 <section id="menu">
 <h1>Menu</h1>
-<p>Explore our curated menu collection.</p>
+<p>Explore our curated menu collection featuring global cuisine and signature dishes.</p>
 <button class="menu-btn" onclick="openMenu()">View Full Menu</button>
 </section>
 
 <section id="reviews">
 <h1>Guest Reviews</h1>
-<p>4.5 Rating · 447 Reviews</p>
+
+<div class="review-grid">
+
+<div class="review-box">
+<div class="review-name">Nathan Anand</div>
+<div class="review-text">
+Experienced power issues during visit. Generators didn’t start which caused discomfort.
+</div>
+</div>
+
+<div class="review-box">
+<div class="review-name">Drishika Reddy</div>
+<div class="review-text">
+Food was average. Portions felt small for price. Service was slow.
+</div>
+</div>
+
+<div class="review-box">
+<div class="review-name">Lekha Singhal</div>
+<div class="review-text">
+One of the best places in Film Nagar for global cuisine. Aesthetic interiors perfect for photos.
+</div>
+</div>
+
+<div class="review-box">
+<div class="review-name">Nahida Parveen</div>
+<div class="review-text">
+Charming ambiance, flavorful food, and friendly service.
+</div>
+</div>
+
+</div>
+
 </section>
 
 <section id="about">
-<h1>About</h1>
-<p>Luxury ambiance · Rooftop seating · Valet parking · Reservations accepted</p>
+<h1>About Era Bistro</h1>
+<p>
+Era Bistro is a vintage-themed global kitchen located in Film Nagar, Hyderabad.
+The restaurant offers Italian and international cuisine in a cozy, trendy atmosphere.
+It is popular for lunch, dinner, solo dining, and group gatherings.
+Highlights include rooftop seating, fireplace ambiance, great desserts, and aesthetic interiors.
+The restaurant supports dine-in, takeaway, delivery, and reservations.
+Amenities include free Wi-Fi, gender-neutral restrooms, valet parking, and ample parking space.
+Family-friendly, LGBTQ+ friendly, and ideal for both casual and special occasions.
+</p>
 </section>
 
 <div id="menuModal">
